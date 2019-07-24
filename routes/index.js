@@ -29,4 +29,13 @@ router.get("/login", async (req, res) => {
   res.redirect("/home/");
 });
 
+/* Route to fetch the user's details */
+router.get("/get-user", async (req, res) => {
+  try {
+    res.send(await OAuthClient.getAuthorizedUser(req.cookies.userKey));
+  } catch {
+    res.send(undefined);
+  }
+});
+
 module.exports = router;
