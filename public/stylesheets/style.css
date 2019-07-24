@@ -1,12 +1,59 @@
 /* Importing fonts from Google Font */
-@import url("https://fonts.googleapis.com/css?family=Merienda&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Merienda|BioRhyme&display=swap");
 
 body {
   text-align: center;
-  background: #cbcbcb;
+  background: #121212;
+  color: #cdcdcd;
   font: 18px "Merienda", cursive;
+  flex-direction: column;
 }
 
-a {
-  color: #00b7ff;
+h1 {
+  text-shadow: #000000 2px 4px;
+}
+
+hr {
+  height: 0;
+  border-bottom: 1px #ccccff solid;
+  width: 90%;
+  margin-bottom: 24px;
+}
+
+.links {
+  margin: 16px;
+  margin-top: 32px;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.links a {
+  padding: 16px;
+  border-radius: 12px;
+  background: #000000;
+  color: #9999cc;
+  text-decoration: none;
+  font-family: "BioRhyme", serif;
+  flex-grow: 1;
+  margin: 12px;
+}
+
+.links a:hover {
+  border-radius: 12px;
+  color: #ccffff;
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 720px) {
+  .links {
+    flex-direction: column;
+  }
+  .links a {
+    margin-bottom: 8px;
+  }
+
+  body {
+    font-size: 14px;
+  }
 }
