@@ -1,0 +1,12 @@
+/* Importing fonts from Google Font */
+@import url("https://fonts.googleapis.com/css?family=Merienda&display=swap");
+
+body {
+  text-align: center;
+  background: #cbcbcb;
+  font: 18px "Merienda", cursive;
+}
+
+a {
+  color: #00b7ff;
+}
