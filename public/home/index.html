@@ -12,13 +12,26 @@
 </head>
 
 <body>
-    <div id="app">
-        <h1>Dashboard</h1>
-        <hr />
-        Logged in as <strong>{{ userData.username }}#{{ userData.discriminator }}</strong>
-
+    <div id="app" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+            <h1>Dashboard</h1>
+            <hr />
+        </div>
+        <div>Logged in as <strong>{{ userData.username }}#{{ userData.discriminator }}</strong></div>
+        <div class="guilds">
+            <div v-for="g in guilds" v-on:click="selectGuild(g.id)">
+                <guild v-bind:key="g.id" v-bind:guild-object="g">
+                </guild>
+            </div>
+        </div>
+        <div v-if="specificGuild" class="guild">
+            <li v-for="(val, key) in specificGuild">
+                <b>{{ key }}</b> - {{ val }}
+            </li>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/javascripts/guilds.js"></script>
     <script src="/javascripts/index.js"></script>
 </body>
 
