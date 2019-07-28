@@ -171,10 +171,10 @@ destroy@~1.0.4:
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
 
-disco-oauth@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/disco-oauth/-/disco-oauth-3.0.1.tgz#b065ae4811edad16a282152165b797da09d340db"
-  integrity sha512-5SZAw3EdFOJWRyAMk4XcZZ87ibYxuDuqFe9yU13BNFjUfDIhZTwFx+RjBVu+jkB/hkUSL1EJwXeV2sQDfnWC8A==
+disco-oauth@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/disco-oauth/-/disco-oauth-3.0.2.tgz#b2e9b5ae999f0a76377b00df66a5691ee203f1bf"
+  integrity sha512-QrZgoK6wcFRD0CB+kQsnOP1Wtu5t1GKEoiEDxYld+CyeyaxnP89LVD8U2At+cRN3U+Z3DS0gUY2/9QJHglicHg==
   dependencies:
     btoa "^1.2.1"
     jsonwebtoken "^8.5.1"

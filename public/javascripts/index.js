@@ -13,22 +13,28 @@ var app = new Vue({
   },
   mounted() {
     fetch("/get-user")
-      .then(response => response.json())
+      .then(response => response.text())
       .then(res => {
-        this.userData = res;
+        console.log(res);
+        this.userData = JSON.parse(res);
       })
       .catch(e => {
         console.log(e);
-        window.location = "/";
+        setTimeout(() => {
+          window.location = "/";
+        }, 5000);
       });
     fetch("/get-guilds")
       .then(response => response.text())
       .then(res => {
+        console.log(res);
         this.guilds = JSON.parse(res);
       })
       .catch(e => {
         console.log(e);
-        window.location = "/";
+        setTimeout(() => {
+          window.location = "/";
+        }, 5000);
       });
   }
 });

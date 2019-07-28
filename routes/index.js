@@ -39,7 +39,16 @@ router.get("/get-user", async (req, res) => {
   try {
     res.send(await OAuthClient.getAuthorizedUser(req.cookies.userKey));
   } catch (e) {
-    res.send(e);
+    if (e.code)
+      if (e.code == "444") {
+        let key = await OAuthClient.refreshAccess(req.cookies.userKey);
+        let expires = await OAuthClient.getAccessToken(key);
+        res.clearCookie("userKey");
+        res.cookie("userKey", key, {
+          maxAge: expires["expires_in"] * 900
+        });
+        res.redirect("/get-user/");
+      } else res.send(e);
   }
 });
 
@@ -47,8 +56,17 @@ router.get("/get-user", async (req, res) => {
 router.get("/get-guilds", async (req, res) => {
   try {
     res.send(await OAuthClient.getAuthorizedUserGuilds(req.cookies.userKey));
-  } catch {
-    res.send(undefined);
+  } catch (e) {
+    if (e.code)
+      if (e.code == "444") {
+        let key = await OAuthClient.refreshAccess(req.cookies.userKey);
+        let expires = await OAuthClient.getAccessToken(key);
+        res.clearCookie("userKey");
+        res.cookie("userKey", key, {
+          maxAge: expires["expires_in"] * 900
+        });
+        res.redirect("/get-guilds/");
+      } else res.send(e);
   }
 });
 
